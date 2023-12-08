@@ -19,8 +19,6 @@ public class Main {
         String word;
 
 
-
-
         while (true){
             System.out.println("-----------------------------------------" );
             System.out.print("Выберите одну из команд: \n 1) ADD\n 2) EXIT\n 3) LIST \n и введите ее: " );
@@ -29,9 +27,6 @@ public class Main {
             commandStr = commandStr.toUpperCase().trim();
             boolean check;
             boolean bordercheck;
-
-
-
 
             switch (commandStr) {
                 case "ADD" -> {System.out.println("Сейчас вы будете добавлять существо в список");
@@ -77,8 +72,6 @@ public class Main {
                         break;
                     }
 
-
-
                     while (true){
                         System.out.println("Введите вес животного");
                         String massStr = scanner.next();
@@ -106,15 +99,6 @@ public class Main {
                     //System.out.println(animal);
                     animalsList.add(animal);
                     animal.say();
-
-
-
-
-
-
-
-
-
 
                 }
                 case "LIST" -> {System.out.println("отработал LIST");

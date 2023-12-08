@@ -40,11 +40,6 @@ public abstract class Animal {
         return color;
     }
 
-
-
-
-
-
     public  void say() {
         System.out.println("Я издаю звук");
     };
