@@ -8,14 +8,6 @@ public abstract class Animal {
     private String color = "";
 
 
-//    public Animal (int age, String name, float mass, String color){
-//        this.name = name;
-//        this.age = age;
-//        this.mass = mass;
-//        this.color = color;
-//
-//    }
-
     public void  setName(String name) {
         this.name = name;
     }
@@ -71,9 +63,8 @@ public abstract class Animal {
 
 
 
-    String ageDeclination = ageDeclination();
-
     public String toString(){
+        String ageDeclination = ageDeclination();
         return String.format("Привет! Меня зовут %s, мне %d %s, я вешу - %s кг, мой цвет - %s",
                 this.name,
                 this.age ,

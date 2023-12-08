@@ -3,13 +3,11 @@
 import java.util.ArrayList;
 import animals.Animal;
 import data.AnimalData;
-import data.CommandsData;
 import factory.AnimalFactory;
 import validation.Validator;
 
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 public class Main {
 
@@ -56,6 +54,7 @@ public class Main {
                             continue;
                         }
                         animal.setName(name);
+
                         break;
                     }
                     while (true){
@@ -104,9 +103,10 @@ public class Main {
                     String color = scanner.next();
                     animal.setColor(color);
 
-                    System.out.println(animal);
+                    //System.out.println(animal);
                     animalsList.add(animal);
                     animal.say();
+
 
 
 
