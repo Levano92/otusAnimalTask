@@ -30,14 +30,18 @@ public class Main {
 
             switch (commandStr) {
                 case "ADD" -> {System.out.println("Сейчас вы будете добавлять существо в список");
-
-                    System.out.println("Введите тип животного:");
-                    String animalTypeStr = scanner.next();
-                    animalTypeStr = animalTypeStr.toUpperCase().trim();
-                    if (!animalTypeStr.equals("CAT") && !animalTypeStr.equals("DOG") && !animalTypeStr.equals("DUCK")){
-                        System.out.println("Я не знаю такого животного");
-                        continue;
+                    String animalTypeStr;
+                    while (true){
+                        System.out.println("Введите тип животного:");
+                        animalTypeStr = scanner.next();
+                        animalTypeStr = animalTypeStr.toUpperCase().trim();
+                        if (!animalTypeStr.equals("CAT") && !animalTypeStr.equals("DOG") && !animalTypeStr.equals("DUCK")){
+                            System.out.println("Я не знаю такого животного");
+                            continue;
+                        }
+                        break;
                     }
+
                     Animal animal = animalFactory.create(AnimalData.valueOf(animalTypeStr));
                     while (true){
                         System.out.println("Введите имя животного:");
