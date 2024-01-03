@@ -23,7 +23,23 @@ public class Validator
 
         return bordercheck;
     }
+    public static String numberValidation (String numbStr, int high) {
+        numbStr = numbStr.trim();
+        String massage = "Значение корректно";
+        boolean check = Validator.isNumber(numbStr);
+        if (check){
+            massage = "В введенном значении не может быть букв, попробуйте еще раз";
+            return  massage;
+        }
+        int numbInt = Integer.parseInt(numbStr);
+        boolean bordercheck = Validator.isBordersNumberCorrect(0, 20, numbInt);
+        if (bordercheck){
+            massage = "Введенное число находится вне допустимых границ 0 и " + high;
+            return  massage;
+        }
+        return massage;
 
+    }
 }
 
 

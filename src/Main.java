@@ -53,45 +53,33 @@ public class Main {
                             continue;
                         }
                         animal.setName(name);
-
                         break;
                     }
                     while (true){
                         System.out.println("Введите возраст животного:");
                         String ageStr = scanner.next();
-                        check = Validator.isNumber(ageStr);
-                        if (check){
-                            System.out.println("В возрасте не может быть букв или символов, попробуйте еще раз");
+                        String mess = Validator.numberValidation(ageStr,20);
+                        if (mess != "Значение корректно"){
+                            System.out.println(mess);
                             continue;
                         }
                         ageStr = ageStr.trim();
                         int age = Integer.parseInt(ageStr);
-                        bordercheck = Validator.isBordersNumberCorrect(0, 20, age);
-                        if (bordercheck){
-                            System.out.println("Введенное число находится вне допустимых границ 0 и 20");
-                            continue;
-                        }
-
                         animal.setAge(age);
                         break;
+
                     }
 
                     while (true){
                         System.out.println("Введите вес животного");
                         String massStr = scanner.next();
-                        check = Validator.isNumber(massStr);
-                        if (check) {
-                            System.out.println("В весе не может быть букв или символов, попробуйте еще раз");
+                        String mess = Validator.numberValidation(massStr, 35);
+                        if (mess != "Значение корректно"){
+                            System.out.println(mess);
                             continue;
                         }
                         massStr = massStr.trim();
                         float mass = Float.parseFloat(massStr);
-                        bordercheck = Validator.isBordersNumberCorrect(0, 35, mass);
-                        if (bordercheck){
-                            System.out.println("Введенное число находится вне допустимых границ 0 и 35 кг");
-                            continue;
-                        }
-
                         animal.setMass(mass);
                         break;
                     }
